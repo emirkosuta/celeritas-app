@@ -1,7 +1,7 @@
 package services
 
 import (
-	"myappl/data"
+	"myapp/data"
 
 	"github.com/emirkosuta/celeritas"
 )

@@ -1,8 +1,9 @@
 package services
 
 import (
+	"myappl/data"
+
 	"github.com/emirkosuta/celeritas"
-	"github.com/emirkosuta/golang-laravel/data"
 )
 
 type Services struct {

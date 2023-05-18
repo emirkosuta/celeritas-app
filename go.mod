@@ -1,4 +1,4 @@
-module github.com/emirkosuta/celeritas-app
+module myapp
 
 go 1.19
 

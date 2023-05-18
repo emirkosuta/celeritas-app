@@ -1,11 +1,12 @@
 package main
 
 import (
+	"myapp/data"
+	"myapp/handlers"
+	"myapp/middleware"
+	"myapp/services"
+
 	"github.com/emirkosuta/celeritas"
-	"github.com/emirkosuta/golang-laravel/data"
-	"github.com/emirkosuta/golang-laravel/handlers"
-	"github.com/emirkosuta/golang-laravel/middleware"
-	"github.com/emirkosuta/golang-laravel/services"
 )
 
 type application struct {

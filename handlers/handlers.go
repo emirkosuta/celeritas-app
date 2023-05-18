@@ -4,8 +4,9 @@ import (
 	"net/http"
 	"time"
 
+	"myapp/services"
+
 	"github.com/emirkosuta/celeritas"
-	"github.com/emirkosuta/golang-laravel/services"
 )
 
 type Handlers struct {

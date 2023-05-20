@@ -4,14 +4,13 @@ import (
 	"net/http"
 	"time"
 
-	"myapp/services"
-
 	"github.com/emirkosuta/celeritas"
 )
 
 type Handlers struct {
 	App      *celeritas.Celeritas
-	Services *services.Services
+	Services struct {
+	}
 }
 
 func (h *Handlers) Home(w http.ResponseWriter, r *http.Request) {

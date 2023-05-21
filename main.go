@@ -1,7 +1,6 @@
 package main
 
 import (
-	"myapp/handlers"
 	"myapp/middleware"
 
 	"github.com/emirkosuta/celeritas"
@@ -9,7 +8,6 @@ import (
 
 type application struct {
 	App        *celeritas.Celeritas
-	Handlers   *handlers.Handlers
 	Middleware *middleware.Middleware
 }
 

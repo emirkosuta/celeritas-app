@@ -11,7 +11,7 @@ import (
 	"github.com/emirkosuta/celeritas"
 )
 
-func initApplication() *application {
+func initApplication() *celeritas.Celeritas {
 	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
@@ -26,25 +26,15 @@ func initApplication() *application {
 
 	cel.AppName = "myapp"
 
+	models := data.New(cel.DB.Pool)
+
 	myMiddleware := &middleware.Middleware{
 		App: cel,
 	}
 
-	myHandlers := &handlers.Handlers{
-		App: cel,
-	}
+	myHandlers := &handlers.Handlers{}
 
-	app := &application{
-		App:        cel,
-		Handlers:   myHandlers,
-		Middleware: myMiddleware,
-	}
+	cel.Routes = routes(cel, myMiddleware, myHandlers)
 
-	app.App.Routes = app.routes()
-
-	models := data.New(app.App.DB.Pool)
-
-	app.Middleware.Models = models
-
-	return app
+	return cel
 }

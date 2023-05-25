@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 
-	"myapp/data"
 	"myapp/handlers"
 	"myapp/middleware"
 
@@ -26,13 +25,11 @@ func initApplication() *celeritas.Celeritas {
 
 	cel.AppName = "myapp"
 
-	models := data.New(cel.DB.Pool)
+	myHandlers := &handlers.Handlers{}
 
 	myMiddleware := &middleware.Middleware{
 		App: cel,
 	}
-
-	myHandlers := &handlers.Handlers{}
 
 	cel.Routes = routes(cel, myMiddleware, myHandlers)
 
